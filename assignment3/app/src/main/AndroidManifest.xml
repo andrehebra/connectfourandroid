@@ -13,6 +13,12 @@
         android:theme="@style/Theme.ConnectFour"
         tools:targetApi="31">
         <activity
+            android:name=".Board"
+            android:exported="false" />
+        <activity
+            android:name=".GameOptions"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
