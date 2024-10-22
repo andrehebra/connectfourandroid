@@ -5,7 +5,6 @@ import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -39,15 +38,13 @@ public class MainActivity extends AppCompatActivity {
                     if (result.getResultCode() == Activity.RESULT_OK) {
                         Intent data = result.getData();
                         if (data != null) {
-                            int level = data.getIntExtra(Options.GAME_MODE, R.string.easyMode);
+                            int level = data.getIntExtra(Options.GAMEMODE, R.string.easyMode);
 
                             if (level == R.string.easyMode) {
                                 Toast.makeText(getApplicationContext(), "Easy Mode", Toast.LENGTH_LONG).show();
-                            }
-                            else if (level == R.string.mediumMode) {
+                            } else if (level == R.string.mediumMode) {
                                 Toast.makeText(getApplicationContext(), "Medium Mode", Toast.LENGTH_LONG).show();
-                            }
-                            else if (level == R.string.hardMode) {
+                            } else if (level == R.string.hardMode) {
                                 Toast.makeText(getApplicationContext(), "Hard Mode", Toast.LENGTH_LONG).show();
                             }
                         }

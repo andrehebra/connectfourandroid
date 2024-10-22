@@ -11,7 +11,7 @@ public class Options extends AppCompatActivity {
     private RadioButton easy;
     private RadioButton medium;
     private RadioButton hard;
-    public static final String GAME_MODE = "com.example.connectfour.gameoptions";
+    public static final String GAMEMODE = "com.example.connectfour.gameoptions";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,9 +34,9 @@ public class Options extends AppCompatActivity {
             difficulty = R.string.easyMode;
         }
 
-        Intent intent = new Intent();
-        intent.putExtra(GAME_MODE, difficulty);
-        setResult(RESULT_OK, intent);
+        Intent intentHandler = new Intent();
+        intentHandler.putExtra(GAMEMODE, difficulty);
+        setResult(RESULT_OK, intentHandler);
         finish();
     }
 }
