@@ -1,10 +1,8 @@
 package com.example.connectfour;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 
-public class Board extends AppCompatActivity {
+public class MainBoard extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

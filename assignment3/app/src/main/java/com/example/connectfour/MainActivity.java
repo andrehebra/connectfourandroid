@@ -22,12 +22,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onBoardClick(View view) {
-        Intent intent = new Intent(this, Board.class);
+        Intent intent = new Intent(this, MainBoard.class);
         startActivity(intent);
     }
 
     public void onOptionsClick(View view) {
-        Intent intent = new Intent(this, GameOptions.class);
+        Intent intent = new Intent(this, Options.class);
         mModeResultLauncher.launch(intent);
     }
 
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
                     if (result.getResultCode() == Activity.RESULT_OK) {
                         Intent data = result.getData();
                         if (data != null) {
-                            int level = data.getIntExtra(GameOptions.GAME_MODE, R.string.easyMode);
+                            int level = data.getIntExtra(Options.GAME_MODE, R.string.easyMode);
 
                             if (level == R.string.easyMode) {
                                 Toast.makeText(getApplicationContext(), "Easy Mode", Toast.LENGTH_LONG).show();

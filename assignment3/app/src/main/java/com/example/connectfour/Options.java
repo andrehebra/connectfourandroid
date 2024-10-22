@@ -7,9 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.RadioButton;
 
-public class GameOptions extends AppCompatActivity {
+public class Options extends AppCompatActivity {
     private RadioButton easy;
-    private RadioButton med;
+    private RadioButton medium;
     private RadioButton hard;
     public static final String GAME_MODE = "com.example.connectfour.gameoptions";
 
@@ -17,34 +17,25 @@ public class GameOptions extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_options);
-
-        easy = (RadioButton)findViewById(R.id.radio_easy);
-        med = (RadioButton)findViewById(R.id.radio_medium);
-        hard = (RadioButton)findViewById(R.id.radio_hard);
+        easy = (RadioButton)findViewById(R.id.easyButton);
+        medium = (RadioButton)findViewById(R.id.mediumButton);
+        hard = (RadioButton)findViewById(R.id.hardButton);
     }
 
     public void onLevelSelected(View view) {
-        int levelId;
-
-        if(easy.isChecked())
-        {
-            levelId = R.string.easyMode;
-        }
-        else if(med.isChecked())
-        {
-            levelId = R.string.mediumMode;
-        }
-        else if(hard.isChecked())
-        {
-            levelId = R.string.hardMode;
-        }
-        else
-        {
-            levelId = R.string.easyMode;
+        int difficulty;
+        if(easy.isChecked()) {
+            difficulty = R.string.easyMode;
+        } else if(medium.isChecked()) {
+            difficulty = R.string.mediumMode;
+        } else if(hard.isChecked()) {
+            difficulty = R.string.hardMode;
+        } else {
+            difficulty = R.string.easyMode;
         }
 
         Intent intent = new Intent();
-        intent.putExtra(GAME_MODE, levelId);
+        intent.putExtra(GAME_MODE, difficulty);
         setResult(RESULT_OK, intent);
         finish();
     }
